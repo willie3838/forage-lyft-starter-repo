@@ -2,9 +2,9 @@ from abc import ABC, abstractmethod
 
 
 class Car(ABC):
-    def __init__(self, last_service_date):
+    def __init__(self, last_service_date, engine):
         self.last_service_date = last_service_date
+        self.engine = engine
 
-    @abstractmethod
     def needs_service(self):
-        pass
+        return self.engine.engine_should_be_serviced()
